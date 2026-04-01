@@ -9,20 +9,20 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata = {
-  title: "Vanshika & Nitin - Amantrran Web Invitation 💍",
+  title: "Vanshika Weds Nitin — Amantrran Web Invitation 💍",
   description:
     "Aap sabka pyaar bhara swagat hai Vanshika aur Nitin ki shaadi mein. Click to view the wedding invitation card and event details.",
   keywords:
     "Indian wedding, shaadi, wedding invitation, Vanshika Nitin wedding, Amantrran",
   openGraph: {
-    title: "Vanshika & Nitin - Amantrran Web Invitation 💍",
+    title: "Vanshika Weds Nitin — Amantrran Web Invitation 💍",
     description:
       "Join us for the wedding celebrations of Vanshika & Nitin. Tap to view the full invitation.",
     url: "https://nitinwedsvanshika.vercel.app/",
     siteName: "Amantrran Web Invitation",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200&h=630&fit=crop&q=80",
+        url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1200&h=630&fit=crop&q=80",
         width: 1200,
         height: 630,
         alt: "Vanshika & Nitin Wedding Invitation",
@@ -33,9 +33,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vanshika & Nitin - Amantrran Web Invitation 💍",
+    title: "Vanshika Weds Nitin — Amantrran Web Invitation 💍",
     description: "Join us for the wedding celebrations. Click to view the invitation.",
-    images: ["https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200&h=630&fit=crop&q=80"],
+    images: ["https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1200&h=630&fit=crop&q=80"],
   },
 };
 

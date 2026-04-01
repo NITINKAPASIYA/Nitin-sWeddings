@@ -257,3 +257,48 @@ export function RSVPForm() {
     </form>
   );
 }
+
+/* ===== PERSONALIZED SHARE TOOL ===== */
+export function ShareInvitation() {
+  const [guestName, setGuestName] = useState("");
+  const invitationLink = "https://nitinwedsvanshika.vercel.app/";
+
+  const getWhatsAppLink = () => {
+    const message = `Dear ${guestName || "[Guest Name]"},
+
+Mr. & Mrs. Kapasiya invites you to the wedding ceremony of their son *Nitin* with *Vanshika* on *Thursday, 30 April 2026*.
+
+Please click the *View Invitation* button below to view Vanshika & Nitin's wedding invitation website.
+
+*Special Note* — Bless the couple by sharing your precious wishes with them via the RSVP form included in the invitation website.
+
+*View Invitation:*
+${invitationLink}`;
+
+    return `https://wa.me/?text=${encodeURIComponent(message)}`;
+  };
+
+  return (
+    <div className="share-tool">
+      <h3 style={{ fontFamily: "'Yatra One', cursive" }}>Personalize & Share</h3>
+      <div className="share-input-group">
+        <input
+          type="text"
+          placeholder="Enter Guest Name (e.g. Jay)"
+          value={guestName}
+          onChange={(e) => setGuestName(e.target.value)}
+          className="share-input"
+        />
+        <a
+          href={getWhatsAppLink()}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="share-button"
+        >
+          Share on WhatsApp 📲
+        </a>
+      </div>
+      <p className="share-hint">Type a name above and click share to send a personalized invitation!</p>
+    </div>
+  );
+}

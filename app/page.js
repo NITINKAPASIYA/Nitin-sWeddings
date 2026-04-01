@@ -5,6 +5,7 @@ import {
   CountdownTimer,
   MandalaSVG,
   RSVPForm,
+  ShareInvitation,
 } from "./components";
 
 const events = [
@@ -248,6 +249,10 @@ export default function Home() {
               Please let us know if you are coming.
             </p>
             <RSVPForm />
+          </div>
+
+          <div className="share-wrapper">
+            <ShareInvitation />
           </div>
         </ScrollReveal>
       </section>
