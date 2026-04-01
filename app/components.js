@@ -268,7 +268,11 @@ export function ShareInvitation() {
 
 Mr. & Mrs. Kapasiya invites you to the wedding ceremony of their son *Nitin* with *Vanshika* on *Thursday, 30 April 2026*.
 
-*▶ CLICK BELOW TO VIEW INVITATION ◀*
+Please click the *View Invitation* button below to view Vanshika & Nitin's wedding invitation website.
+
+*Special Note* — Bless the couple by sharing your precious wishes with them via the RSVP form included in the invitation website.
+
+*View Invitation:*
 ────────────────────
 🔗 https://nitinwedsvanshika.vercel.app/
 ────────────────────
@@ -298,11 +302,7 @@ Mr. & Mrs. Kapasiya invites you to the wedding ceremony of their son *Nitin* wit
           Share on WhatsApp 📲
         </a>
       </div>
-      <div className="share-guide">
-        <p><strong>💡 Pro Tip for Clean Sharing:</strong></p>
-        <p>1. After you click share and paste the link, <strong>WAIT 2 seconds</strong> for the photo preview to appear.</p>
-        <p>2. Then, <strong>DELETE the link text</strong> before sending. This leaves only the beautiful invitation box!</p>
-      </div>
+      <p className="share-hint">Type a name above and click share to send a personalized invitation!</p>
     </div>
   );
 }
