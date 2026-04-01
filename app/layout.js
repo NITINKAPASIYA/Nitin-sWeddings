@@ -18,7 +18,7 @@ export const metadata = {
     title: "Vanshika & Nitin - Amantrran Web Invitation 💍",
     description:
       "Join us for the wedding celebrations of Vanshika & Nitin. Tap to view the full invitation.",
-    url: "https://nitin-sweddings.vercel.app", // Fallback URL
+    url: "https://nitinwedsvanshika.vercel.app/",
     siteName: "Amantrran Web Invitation",
     images: [
       {
