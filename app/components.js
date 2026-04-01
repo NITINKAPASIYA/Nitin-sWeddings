@@ -268,12 +268,14 @@ export function ShareInvitation() {
 
 Mr. & Mrs. Kapasiya invites you to the wedding ceremony of their son *Nitin* with *Vanshika* on *Thursday, 30 April 2026*.
 
-Please click the *View Invitation* button below to view Vanshika & Nitin's wedding invitation website.
-
-*Special Note* — Bless the couple by sharing your precious wishes with them via the RSVP form included in the invitation website.
+Please click the link below to view Vanshika & Nitin's wedding invitation website.
 
 *View Invitation:*
-${invitationLink}`;
+────────────────────
+🔗 https://nitinwedsvanshika.vercel.app/
+────────────────────
+
+*Special Note* — Bless the couple by sharing your precious wishes with them via the RSVP form included in the invitation website.`;
 
     return `https://wa.me/?text=${encodeURIComponent(message)}`;
   };
