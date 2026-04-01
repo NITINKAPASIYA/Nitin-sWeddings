@@ -1028,6 +1028,30 @@ body {
   filter: brightness(1.1);
 }
 
+.share-guide {
+  background: rgba(212, 168, 67, 0.05);
+  border: 1px solid rgba(212, 168, 67, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 25px;
+  text-align: left;
+}
+
+.share-guide p {
+  font-size: 0.9rem;
+  color: var(--gold-light);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.share-guide p:last-child {
+  margin-bottom: 0;
+}
+
+.share-guide strong {
+  color: var(--gold);
+}
+
 .share-hint {
   font-size: 0.85rem;
   color: var(--gold-light);
