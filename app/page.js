@@ -47,18 +47,6 @@ const galleryImages = [
     label: "Mehendi & Haldi",
   },
   {
-    src: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800&q=80",
-    label: "Wedding Mandap",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
-    label: "Sangeet Night",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1550005809-91ad75fb315f?w=800&q=80",
-    label: "Marigold Dreams",
-  },
-  {
     src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80",
     label: "Grand Celebration",
   },
