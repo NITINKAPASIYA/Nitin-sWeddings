@@ -261,7 +261,7 @@ export function RSVPForm() {
 /* ===== PERSONALIZED SHARE TOOL ===== */
 export function ShareInvitation() {
   const [guestName, setGuestName] = useState("");
-  const invitationLink = "https://nitinwedsvanshika.vercel.app/";
+  const invitationLink = "https://nitinwedsvanshika.live/";
 
   const getWhatsAppLink = () => {
     const message = `Dear ${guestName || "[Guest Name]"},
@@ -273,11 +273,7 @@ Please click the *View Invitation* button below to view Vanshika & Nitin's weddi
 *Special Note* — Bless the couple by sharing your precious wishes with them via the RSVP form included in the invitation website.
 
 *View Invitation:*
-────────────────────
-🔗 https://nitinwedsvanshika.vercel.app/
-────────────────────
-
-*Special Note* — Bless the couple by sharing your precious wishes with them via the RSVP form included in the invitation website.`;
+${invitationLink}`;
 
     return `https://wa.me/?text=${encodeURIComponent(message)}`;
   };
