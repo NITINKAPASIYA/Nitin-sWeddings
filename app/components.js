@@ -295,7 +295,7 @@ ${invitationLink}`;
           rel="noopener noreferrer"
           className="share-button"
         >
-          Share on WhatsApp 📲
+          Share Invitation with Others
         </a>
       </div>
       <p className="share-hint">Type a name above and click share to send a personalized invitation!</p>
