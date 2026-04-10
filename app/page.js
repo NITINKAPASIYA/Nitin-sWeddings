@@ -16,8 +16,11 @@ const events = [
     date: "26 April 2026",
     time: "Evening Celebration",
     venue: "Gul Gardens, Bulandshahr",
+    address: "Railway Rd, Panni Nagar, Amba Enclave, Bulandshahr, UP 203001",
     tagline: "Lagan Lagi Re — Ek Shaam Pyaar ke Naam 🎶",
     bg: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80",
+    mapUrl: "https://maps.google.com/?q=Railway+Rd,+Panni+Nagar,+Amba+Enclave,+Bulandshahr,+UP+203001",
+    accentColor: "#E8A87C",
   },
   {
     emoji: "💛",
@@ -26,8 +29,11 @@ const events = [
     date: "28 April 2026",
     time: "Morning Ceremony",
     venue: "Home, Bulandshahr",
+    address: "Family Home, Bulandshahr, Uttar Pradesh",
     tagline: "Haldi ki Raat — Mann mein Khushi, Tan mein Noor ✨",
     bg: "https://images.unsplash.com/photo-1583089892943-e02e5b017b6a?w=600&q=80",
+    mapUrl: "https://maps.google.com/?q=Bulandshahr,+Uttar+Pradesh",
+    accentColor: "#F6D55C",
   },
   {
     emoji: "💍",
@@ -36,8 +42,11 @@ const events = [
     date: "30 April 2026",
     time: "Shubh Muhurat",
     venue: "Garbhare Village, Greater Noida",
+    address: "CG7M+4V3, Fuhari, Greater Noida, UP 201312",
     tagline: "Saat Pheron ki Pavitra Bela — Ek Naye Safar ki Shuruaat 🙏",
     bg: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&q=80",
+    mapUrl: "https://maps.google.com/?q=CG7M%2B4V3,+Fuhari,+Greater+Noida,+UP+201312",
+    accentColor: "#D4A843",
   },
 ];
 
@@ -148,12 +157,17 @@ export default function Home() {
 
         <div className="events-grid">
           {events.map((event, index) => (
-            <ScrollReveal key={event.name} delay={index * 150}>
-              <div className="event-card">
+            <ScrollReveal key={event.name} delay={index * 200}>
+              <div className="event-card" style={{ '--accent': event.accentColor }}>
+                <div className="event-card-shimmer" />
                 <div
                   className="event-card-bg"
                   style={{ backgroundImage: `url(${event.bg})` }}
                 />
+                <div className="event-step">0{index + 1}</div>
+                <div className="event-icon-ring">
+                  <span className="event-emoji">{event.emoji}</span>
+                </div>
                 <h3 className="event-name">{event.name}</h3>
                 <p
                   className="event-name-hindi"
@@ -162,10 +176,30 @@ export default function Home() {
                   {event.nameHindi}
                 </p>
                 <div className="event-divider" />
-                <p className="event-date" style={{ fontFamily: "'Yatra One', cursive" }}>{event.date}</p>
-                <p className="event-time">🕐 {event.time}</p>
-                <p className="event-venue">📍 {event.venue}</p>
+                <div className="event-info-row">
+                  <span className="event-info-icon">📅</span>
+                  <p className="event-date" style={{ fontFamily: "'Yatra One', cursive" }}>{event.date}</p>
+                </div>
+                <div className="event-info-row">
+                  <span className="event-info-icon">🕐</span>
+                  <p className="event-time">{event.time}</p>
+                </div>
+                <div className="event-info-row">
+                  <span className="event-info-icon">📍</span>
+                  <div>
+                    <p className="event-venue">{event.venue}</p>
+                    <p className="event-address">{event.address}</p>
+                  </div>
+                </div>
                 <p className="event-tagline">{event.tagline}</p>
+                <a
+                  href={event.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="event-directions-btn"
+                >
+                  Get Directions ↗
+                </a>
               </div>
             </ScrollReveal>
           ))}
