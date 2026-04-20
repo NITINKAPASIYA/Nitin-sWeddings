@@ -219,6 +219,36 @@ export function MandalaSVG({ className }) {
   );
 }
 
+/* ===== NAV BAR ===== */
+export function NavBar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
+      <a href="#hero" className="nav-monogram">
+        <span>V</span>
+        <span className="amp">&amp;</span>
+        <span>N</span>
+      </a>
+      <div className="nav-links">
+        <a href="#story">Story</a>
+        <a href="#countdown">Countdown</a>
+        <a href="#events">Events</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#blessings">Blessings</a>
+      </div>
+      <a href="#rsvp" className="nav-cta">RSVP</a>
+    </nav>
+  );
+}
+
 /* ===== RSVP FORM ===== */
 export function RSVPForm() {
   const [state, handleSubmit] = useForm("mbdpkoaj");
@@ -226,34 +256,55 @@ export function RSVPForm() {
   if (state.succeeded) {
     return (
       <div className="rsvp-success">
-        <div className="success-icon">✨🙏✨</div>
-        <h3 style={{ fontFamily: "'Yatra One', cursive" }}>आपका धन्यवाद!</h3>
-        <p>Aapka Shubh Aagman Swikar Hai! Hum aapka intezaar karenge. 💕</p>
+        <div className="success-icon">✶ ✦ ✶</div>
+        <h3>आपका धन्यवाद!</h3>
+        <p>Aapka Shubh Aagman Swikar Hai. Hum aapka intezaar karenge. 💕</p>
       </div>
     );
   }
 
   return (
     <form className="rsvp-form" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label htmlFor="name" className="form-label">
-          Aapka Naam / Guest Name
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          className="form-input"
-          placeholder="Enter your name"
-          required
-          disabled={state.submitting}
-        />
-        <ValidationError prefix="Name" field="name" errors={state.errors} />
+      <div className="form-row">
+        <div className="form-group">
+          <label htmlFor="name" className="form-label">Guest Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            className="form-input"
+            placeholder="Aapka shubh naam"
+            required
+            disabled={state.submitting}
+          />
+          <ValidationError prefix="Name" field="name" errors={state.errors} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="guests" className="form-label">Pax</label>
+          <select id="guests" name="guests" className="form-select" defaultValue="1" disabled={state.submitting}>
+            <option value="1">1 Guest</option>
+            <option value="2">2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5+">5+ Guests</option>
+          </select>
+        </div>
+      </div>
+      <div className="form-row">
+        <div className="form-group">
+          <label htmlFor="event" className="form-label">Attending</label>
+          <select id="event" name="event" className="form-select" defaultValue="all" disabled={state.submitting}>
+            <option value="all">All Ceremonies</option>
+            <option value="lagan">Lagan & Sagai</option>
+            <option value="haldi">Haldi Rasam</option>
+            <option value="shaadi">Shaadi</option>
+          </select>
+        </div>
       </div>
       <button type="submit" className="rsvp-submit" disabled={state.submitting}>
-        {state.submitting ? "Bheja ja raha hai..." : "Submit Presence ✦"}
+        {state.submitting ? "Bheja ja raha hai..." : "Confirm Presence ✦"}
       </button>
-      <p className="form-note">Notifications sent to kumarnitin5814@gmail.com</p>
+      <p className="form-note">A confirmation will be sent to the family.</p>
     </form>
   );
 }

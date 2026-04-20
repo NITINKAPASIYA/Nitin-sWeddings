@@ -1,10 +1,26 @@
-import { Cormorant_Garamond } from "next/font/google";
+import { Cormorant_Garamond, Fraunces, Marcellus } from "next/font/google";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
   variable: "--font-cormorant",
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  axes: ["SOFT", "opsz"],
+  variable: "--font-fraunces",
+  display: "swap",
+});
+
+const marcellus = Marcellus({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-marcellus",
   display: "swap",
 });
 
@@ -41,7 +57,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="hi-EN" className={cormorant.variable}>
+    <html lang="hi-EN" className={`${cormorant.variable} ${fraunces.variable} ${marcellus.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -50,17 +66,11 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.cdnfonts.com/css/transcity"
+          href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Tiro+Devanagari+Hindi:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
