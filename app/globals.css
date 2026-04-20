@@ -257,7 +257,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
   display: inline-flex;
   align-items: center;
   gap: 0.85rem;
-  padding: 0.55rem 1.1rem;
+  padding: 0.55rem 1.2rem;
   border: 1px solid rgba(217, 178, 106, 0.35);
   border-radius: 999px;
   background: rgba(14,11,8,0.35);
@@ -267,6 +267,28 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--gold-soft);
+  max-width: 100%;
+}
+.hero-eyebrow-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
+}
+.hero-eyebrow-text > span:last-child::before {
+  content: "·";
+  margin-right: 0.6rem;
+  opacity: 0.5;
+}
+@media (max-width: 480px) {
+  .hero-eyebrow { padding: 0.6rem 1rem; }
+  .hero-eyebrow-text {
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: center;
+    line-height: 1.3;
+  }
+  .hero-eyebrow-text > span:last-child::before { display: none; }
 }
 .hero-eyebrow .dot {
   width: 6px; height: 6px; border-radius: 50%;
@@ -353,12 +375,23 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
   font-size: clamp(1.4rem, 3.2vw, 2.1rem);
   color: var(--gold-soft);
   text-align: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
+  width: 100%;
+  max-width: 100%;
 }
 .hero-meta .rule {
-  width: 80px; height: 1px;
+  flex: 0 1 80px;
+  height: 1px;
   background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+}
+.hero-meta .label {
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+@media (max-width: 480px) {
+  .hero-meta { gap: 0.9rem; }
+  .hero-meta .rule { flex-basis: 30px; }
 }
 
 .hero-tagline {

@@ -109,7 +109,10 @@ export default function Home() {
         <div className="hero-content">
           <div className="hero-eyebrow">
             <span className="dot" />
-            <span>Save the Date · 30 · 04 · 2026</span>
+            <span className="hero-eyebrow-text">
+              <span>Save the Date</span>
+              <span className="hero-eyebrow-date">30 · 04 · 2026</span>
+            </span>
           </div>
 
           <p className="invocation">|| श्री गणेशाय नमः ||</p>
@@ -123,7 +126,7 @@ export default function Home() {
 
           <div className="hero-meta">
             <span className="rule" />
-            <span>Thu · 30 April · 2026</span>
+            <span className="label">Thu · 30 April · 2026</span>
             <span className="rule" />
           </div>
 
